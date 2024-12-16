@@ -12,3 +12,5 @@ class QueueClient:
 
         self.m = QueueManager(address=("127.0.0.1", 50000), authkey=b"abracadabra")
         self.m.connect()
+        self.task_queue = self.m.get_task_queue()
+        self.result_queue = self.m.get_result_queue()
