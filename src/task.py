@@ -21,7 +21,12 @@ class Task:
         self.time = time.perf_counter() - start
 
     def to_json(self):
-        dict = {"a": self.a.tolist(), "b": self.b.tolist(), "x": self.x.tolist()}
+        dict = {
+            "a": self.a.tolist(),
+            "b": self.b.tolist(),
+            "x": self.x.tolist(),
+            "identifier": self.identifier,
+        }
         return json.dumps(dict)
 
     @staticmethod
@@ -32,6 +37,7 @@ class Task:
         task.x = np.array(data["x"])
         task.a = np.array(data["a"])
         task.b = np.array(data["b"])
+        task.identifier = np.array(data["identifier"])
 
         return task
 
@@ -41,6 +47,7 @@ class Task:
                 (other.x.tolist() == self.x.tolist())
                 and (other.a.tolist() == self.a.tolist())
                 and (other.b.tolist() == self.b.tolist())
+                and (self.identifier == other.identifier)
             )
 
         return False
