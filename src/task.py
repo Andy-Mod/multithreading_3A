@@ -13,7 +13,7 @@ class Task:
         self.b = np.random.rand(self.size)
         # prepare room for the results
         self.x = np.zeros((self.size))
-        self.time = 0
+        self.time = 0.0
 
     def work(self):
         start = time.perf_counter()
@@ -26,6 +26,8 @@ class Task:
             "b": self.b.tolist(),
             "x": self.x.tolist(),
             "identifier": self.identifier,
+            "time": self.time,
+            "size": self.size,
         }
         return json.dumps(dict)
 
@@ -37,8 +39,9 @@ class Task:
         task.x = np.array(data["x"])
         task.a = np.array(data["a"])
         task.b = np.array(data["b"])
+        task.time = data["time"]
+        task.size = data["size"]
         task.identifier = np.array(data["identifier"])
-
         return task
 
     def __eq__(self, other):
@@ -48,6 +51,8 @@ class Task:
                 and (other.a.tolist() == self.a.tolist())
                 and (other.b.tolist() == self.b.tolist())
                 and (self.identifier == other.identifier)
+                and (self.time == other.time)
+                and (self.size == other.size)
             )
 
         return False
