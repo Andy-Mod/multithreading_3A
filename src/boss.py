@@ -32,7 +32,7 @@ class Boss(QueueClient):
         for i, task in enumerate(self.tasks_sent):
             task.work()
             print(
-                f"The task {task.identifier} is done. Problem size:  Time taken: {task.time} seconds"
+                f"The task {task.identifier} is done. Problem size :{task.size} Time taken: {task.time} seconds"
             )
 
             self.errors.append(task.time - self.tasks_received[i].time)
