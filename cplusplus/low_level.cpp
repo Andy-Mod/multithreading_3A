@@ -53,17 +53,16 @@ public:
   }
 
   void work() {
-    // Record the start time
+
     auto start = high_resolution_clock::now();
-
-    // Perform the computation
-    x = A.colPivHouseholderQr().solve(b);
-
-    // Record the end time
+    x = A.householderQr().solve(b);
     auto end = high_resolution_clock::now();
-
-    // Calculate the elapsed time in seconds
     time = duration<float>(end - start).count();
+
+    Eigen::VectorXf out = A * x;
+
+    if ((out - b).norm() <= 1e-4)
+      cout << "Calcul correct !" << endl;
   }
 
   Eigen::VectorXf get_x() const { return x; }
@@ -120,7 +119,9 @@ Task get_task(string URL, string ACCESS_KEY) {
 }
 
 void do_task_then_post_result(Task task, string URL) {
-  task.work(); // Perform the task and measure its duration
+  cout << "Task (" << task.get_identifier() << ") Started!" << endl;
+
+  task.work();
   json post_data = task.to_json();
 
   cpr::Response r =
