@@ -40,7 +40,7 @@ Open a terminal and type the following commands:
 
 ```bash
 # Install uv
-curl -LsSf \ https://astral.sh/uv/install.sh | sh
+curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Clone the repository
 git clone https://github.com/Andy-Mod/multithreading_3A
@@ -63,11 +63,6 @@ chmod +x start.sh
 
 # Launch the script
 ./start.sh
-
-# Open an other terminal, Navigate to the project directory and launch the boss
-cd multithreading_3A
-python3 src/boss.py
-
 ```
 
 ## Tests Results and Conclusions
