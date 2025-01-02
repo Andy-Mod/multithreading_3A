@@ -232,7 +232,7 @@ Task (Job of size 761) completed, Time: 0.02060 seconds
 
 ![Error Plot with Problem Size and Highlighted Points](data/ex2.png)
 
-As illustrated in the figure above, the tasks are still generally faster in `Python`, but performance is significantly better in `C++`, with almost the same level of accuracy.
+As illustrated in the figure above, the tasks are still commonly faster in `Python`, but performance is significantly better in `C++`, with almost the same level of accuracy.
 
 #### Tests using the solver `householderQr` and `OpenMP` in `CMAKE_BUILD_TYPE Release`
 
@@ -314,7 +314,7 @@ Task (Job of size 761) completed, Time: 0.01507 seconds
 
 ![Error Plot with Problem Size and Highlighted Points](data/ex6.png)
 
-Overall, we observe significant speed improvements. However, `Python` executions remain overall faster and more accurate.
+Overall, significant speed improvements can be observed. As it appeared, `Python` is once again faster and more accurate.
 
 - **8 threads**
 ```bash
@@ -347,7 +347,7 @@ Task (Job of size 761) completed, Time: 0.01507 seconds
 
 ![Error Plot with Problem Size and Highlighted Points](data/ex7.png)
 
-Overall, we observe significant speed improvements. However, `Python` executions remain overall faster and more accurate.
+As illustreted above, there are improvement in the performance regarding the `C++` executions times. Unfortunatelly, `Python` executions are still broadly faster and more accurate.
 
 ### Conclusion
 
