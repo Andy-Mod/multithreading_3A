@@ -1,0 +1,12 @@
+Results in Python
+Task (Job of size 4990) completed, Time: 1.23079 seconds
+Task (Job of size 6900) completed, Time: 2.50945 seconds
+Task (Job of size 4200) completed, Time: 0.73305 seconds
+Task (Job of size 100) completed, Time: 0.00086 seconds
+Task (Job of size 1000) completed, Time: 0.05333 seconds
+Task (Job of size 10) completed, Time: 0.00022 seconds
+Task (Job of size 2989) completed, Time: 0.32106 seconds
+Task (Job of size 3080) completed, Time: 0.34496 seconds
+Task (Job of size 3398) completed, Time: 0.49469 seconds
+Task (Job of size 1162) completed, Time: 0.08706 seconds
+Task (Job of size 761) completed, Time: 0.03700 seconds

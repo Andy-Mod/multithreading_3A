@@ -1,4 +1,4 @@
-# Ingescape Karaoke App
+# Practical Assignment of Multithreading
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
@@ -14,7 +14,7 @@ This is a practical assignment where the goal is to:
 - [Dependencies](#dependencies)
 - [Installation and Setup](#installation-and-setup)
 - [Start the every necessary bits of the app](#tarttheeverynecessarybitsoftheapp)
-- [Tests Results and Conclusions ](#testsresultsandconclusions)
+- [Tests, Results and Conclusions ](#testsresultsandconclusions)
 
 ---
 
@@ -101,30 +101,30 @@ In `Debug` build type, here are the results we got:
 
 ```bash
 Results in C++
-The task Mangekyu 4990 is done. Problem size: 4990 Time taken: 18.046422958374023 seconds
-The task Mangekyu 6900 is done. Problem size: 6900 Time taken: 49.5371208190918 seconds
-The task Mangekyu 4200 is done. Problem size: 4200 Time taken: 10.69587516784668 seconds
-The task Mangekyu 100 is done. Problem size: 100 Time taken: 0.0001717470004223287 seconds
-The task Mangekyu 1000 is done. Problem size: 1000 Time taken: 0.08776196092367172 seconds
-The task Mangekyu 10 is done. Problem size: 10 Time taken: 1.532600072096102e-05 seconds
-The task Mangekyu 2989 is done. Problem size: 2989 Time taken: 3.662109851837158 seconds
-The task Mangekyu 3080 is done. Problem size: 3080 Time taken: 3.9911484718322754 seconds
-The task Mangekyu 3398 is done. Problem size: 3398 Time taken: 5.45238733291626 seconds
-The task Mangekyu 1162 is done. Problem size: 1162 Time taken: 0.13735634088516235 seconds
-The task Mangekyu 761 is done. Problem size: 761 Time taken: 0.044347815215587616 seconds
+Task Job of size 4990 completed, Time: 19.03981 seconds
+Task Job of size 6900 completed, Time: 52.26729 seconds
+Task Job of size 4200 completed, Time: 12.90094 seconds
+Task Job of size 100 completed, Time: 0.00021 seconds
+Task Job of size 1000 completed, Time: 0.12074 seconds
+Task Job of size 10 completed, Time: 0.00001 seconds
+Task Job of size 2989 completed, Time: 4.39684 seconds
+Task Job of size 3080 completed, Time: 4.97558 seconds
+Task Job of size 3398 completed, Time: 6.71316 seconds
+Task Job of size 1162 completed, Time: 0.17252 seconds
+Task Job of size 761 completed, Time: 0.04599 seconds
 
 Results in Python
-The task Mangekyu 4990 is done. Problem size: 4990 Time taken: 0.9062296289999949 seconds
-The task Mangekyu 6900 is done. Problem size: 6900 Time taken: 2.0681871809999848 seconds
-The task Mangekyu 4200 is done. Problem size: 4200 Time taken: 0.5446575260000373 seconds
-The task Mangekyu 100 is done. Problem size: 100 Time taken: 0.0004199890000791129 seconds
-The task Mangekyu 1000 is done. Problem size: 1000 Time taken: 0.020756837000021733 seconds
-The task Mangekyu 10 is done. Problem size: 10 Time taken: 0.0032047280000142564 seconds
-The task Mangekyu 2989 is done. Problem size: 2989 Time taken: 0.24341484499996113 seconds
-The task Mangekyu 3080 is done. Problem size: 3080 Time taken: 0.24024804700002278 seconds
-The task Mangekyu 3398 is done. Problem size: 3398 Time taken: 0.3160894400000416 seconds
-The task Mangekyu 1162 is done. Problem size: 1162 Time taken: 0.03977131499993902 seconds
-The task Mangekyu 761 is done. Problem size: 761 Time taken: 0.02647056499995415 seconds
+Task Job of size 4990 completed, Time: 1.01192 seconds
+Task Job of size 6900 completed, Time: 2.38095 seconds
+Task Job of size 4200 completed, Time: 0.66579 seconds
+Task Job of size 100 completed, Time: 0.00043 seconds
+Task Job of size 1000 completed, Time: 0.03289 seconds
+Task Job of size 10 completed, Time: 0.00008 seconds
+Task Job of size 2989 completed, Time: 0.33147 seconds
+Task Job of size 3080 completed, Time: 0.29531 seconds
+Task Job of size 3398 completed, Time: 0.40043 seconds
+Task Job of size 1162 completed, Time: 0.03788 seconds
+Task Job of size 761 completed, Time: 0.03169 seconds
 ```
 
 ![Error Plot with Problem Size and Highlighted Points](data/ex1.png)
@@ -135,44 +135,227 @@ For instance:
 - Smaller tasks, such as tasks 10, 100, and 761, showed similar execution times in both `C++` and `Python`.
 - In contrast, larger tasks like task 6900 took significantly longer in `C++`, exceeding by more that 47 seconds.
 
-Switching to `CMAKE_BUILD_TYPE Release` improves performance, with execution times in `C++` being overall a litle bit faster.
+Switching to `CMAKE_BUILD_TYPE Release`, here are the results :
+
+```bash
+Results in C++
+Task Job of size 4990 completed, Time: 19.07497 seconds
+Task Job of size 6900 completed, Time: 51.99233 seconds
+Task Job of size 4200 completed, Time: 11.24308 seconds
+Task Job of size 100 completed, Time: 0.00021 seconds
+Task Job of size 1000 completed, Time: 0.11298 seconds
+Task Job of size 10 completed, Time: 0.00001 seconds
+Task Job of size 2989 completed, Time: 3.80055 seconds
+Task Job of size 3080 completed, Time: 4.09021 seconds
+Task Job of size 3398 completed, Time: 5.58099 seconds
+Task Job of size 1162 completed, Time: 0.17842 seconds
+Task Job of size 761 completed, Time: 0.05037 seconds
+
+Results in Python
+Task Job of size 4990 completed, Time: 0.86111 seconds
+Task Job of size 6900 completed, Time: 2.03398 seconds
+Task Job of size 4200 completed, Time: 0.50557 seconds
+Task Job of size 100 completed, Time: 0.00054 seconds
+Task Job of size 1000 completed, Time: 0.03037 seconds
+Task Job of size 10 completed, Time: 0.00010 seconds
+Task Job of size 2989 completed, Time: 0.39521 seconds
+Task Job of size 3080 completed, Time: 0.24433 seconds
+Task Job of size 3398 completed, Time: 0.31616 seconds
+Task Job of size 1162 completed, Time: 0.03170 seconds
+Task Job of size 761 completed, Time: 0.01921 seconds
+```
+
+![Error Plot with Problem Size and Highlighted Points](data/ex3.png)
+
+As observed, there are performance improvements, with execution times in `C++` generally being slightly faster. However, `C++` remains overall slower than `Python`.
 
 #### Tests using the solver `householderQr`
+
+In `Debug` build type, using the solver `householderQr`, here are results:
+
+```bash
+Results in C++
+Task Job of size 4990 completed, Time: 6.42304 seconds
+Task Job of size 6900 completed, Time: 17.74130 seconds
+Task Job of size 4200 completed, Time: 4.27587 seconds
+Task Job of size 100 completed, Time: 0.00023 seconds
+Task Job of size 1000 completed, Time: 0.07441 seconds
+Task Job of size 10 completed, Time: 0.00001 seconds
+Task Job of size 2989 completed, Time: 1.54570 seconds
+Task Job of size 3080 completed, Time: 1.91599 seconds
+Task Job of size 3398 completed, Time: 2.57386 seconds
+Task Job of size 1162 completed, Time: 0.10068 seconds
+Task Job of size 761 completed, Time: 0.02846 seconds
+
+Results in Python
+Task Job of size 4990 completed, Time: 0.99126 seconds
+Task Job of size 6900 completed, Time: 2.28765 seconds
+Task Job of size 4200 completed, Time: 0.60514 seconds
+Task Job of size 100 completed, Time: 0.00042 seconds
+Task Job of size 1000 completed, Time: 0.01687 seconds
+Task Job of size 10 completed, Time: 0.00010 seconds
+Task Job of size 2989 completed, Time: 0.26690 seconds
+Task Job of size 3080 completed, Time: 0.26509 seconds
+Task Job of size 3398 completed, Time: 0.35297 seconds
+Task Job of size 1162 completed, Time: 0.03539 seconds
+Task Job of size 761 completed, Time: 0.02135 seconds
+```
+
+![Error Plot with Problem Size and Highlighted Points](data/ex4.png)
+
+Compared to the `colPivHouseholderQr` solver, we observe significant speed improvements. However, `Python` executions remain overall faster and more accurate.
 
 In `Release` build type, here are the results we got:
 
 ```bash
 Results in C++
-The task Mangekyu 4990 is done. Problem size: 4990 Time taken: 6.519332408905029 seconds
-The task Mangekyu 6900 is done. Problem size: 6900 Time taken: 17.61880874633789 seconds
-The task Mangekyu 4200 is done. Problem size: 4200 Time taken: 3.558016061782837 seconds
-The task Mangekyu 100 is done. Problem size: 100 Time taken: 0.0004950279835611582 seconds
-The task Mangekyu 1000 is done. Problem size: 1000 Time taken: 0.05092376098036766 seconds
-The task Mangekyu 10 is done. Problem size: 10 Time taken: 2.5274999643443152e-05 seconds
-The task Mangekyu 2989 is done. Problem size: 2989 Time taken: 1.2689995765686035 seconds
-The task Mangekyu 3080 is done. Problem size: 3080 Time taken: 1.3877800703048706 seconds
-The task Mangekyu 3398 is done. Problem size: 3398 Time taken: 1.9178365468978882 seconds
-The task Mangekyu 1162 is done. Problem size: 1162 Time taken: 0.07842449843883514 seconds
-The task Mangekyu 761 is done. Problem size: 761 Time taken: 0.022380823269486427 seconds
-Results in Python
+Task (Job of size 4990) completed, Time: 6.28549 seconds
+Task (Job of size 6900) completed, Time: 17.91013 seconds
+Task (Job of size 4200) completed, Time: 4.48223 seconds
+Task (Job of size 100) completed, Time: 0.00017 seconds
+Task (Job of size 1000) completed, Time: 0.07257 seconds
+Task (Job of size 10) completed, Time: 0.00001 seconds
+Task (Job of size 2989) completed, Time: 1.57316 seconds
+Task (Job of size 3080) completed, Time: 1.90423 seconds
+Task (Job of size 3398) completed, Time: 2.70312 seconds
+Task (Job of size 1162) completed, Time: 0.11068 seconds
+Task (Job of size 761) completed, Time: 0.03303 seconds
 
-The task Mangekyu 4990 is done. Problem size: 4990 Time taken: 0.7084680450006999 seconds
-The task Mangekyu 6900 is done. Problem size: 6900 Time taken: 1.7782297870007824 seconds
-The task Mangekyu 4200 is done. Problem size: 4200 Time taken: 0.45709889699992345 seconds
-The task Mangekyu 100 is done. Problem size: 100 Time taken: 0.0003332780006530811 seconds
-The task Mangekyu 1000 is done. Problem size: 1000 Time taken: 0.02459754099982092 seconds
-The task Mangekyu 10 is done. Problem size: 10 Time taken: 6.231399947864702e-05 seconds
-The task Mangekyu 2989 is done. Problem size: 2989 Time taken: 0.20673104999968928 seconds
-The task Mangekyu 3080 is done. Problem size: 3080 Time taken: 0.211836890000086 seconds
-The task Mangekyu 3398 is done. Problem size: 3398 Time taken: 0.2810321280003336 seconds
-The task Mangekyu 1162 is done. Problem size: 1162 Time taken: 0.035492132999934256 seconds
-The task Mangekyu 761 is done. Problem size: 761 Time taken: 0.02322438300052454 seconds
+Results in Python
+Task (Job of size 4990) completed, Time: 1.04918 seconds
+Task (Job of size 6900) completed, Time: 2.38014 seconds
+Task (Job of size 4200) completed, Time: 0.60435 seconds
+Task (Job of size 100) completed, Time: 0.00045 seconds
+Task (Job of size 1000) completed, Time: 0.03385 seconds
+Task (Job of size 10) completed, Time: 0.00009 seconds
+Task (Job of size 2989) completed, Time: 0.28079 seconds
+Task (Job of size 3080) completed, Time: 0.27920 seconds
+Task (Job of size 3398) completed, Time: 0.37009 seconds
+Task (Job of size 1162) completed, Time: 0.03916 seconds
+Task (Job of size 761) completed, Time: 0.02060 seconds
 ```
 
 ![Error Plot with Problem Size and Highlighted Points](data/ex2.png)
 
 As illustrated in the figure above, the tasks are still generally faster in `Python`, but performance is significantly better in `C++`, with almost the same level of accuracy.
 
+#### Tests using the solver `householderQr` and `OpenMP` in `CMAKE_BUILD_TYPE Release`
+
+##### Optimizing Task Execution Performance in `C++`
+
+In this section, we aim to optimize the performance of task execution in `C++` by enabling parallel computation in `Eigen` using `OpenMP`. Parallelization should improve the speed of the operations, especially for large size problems.
+
+###### Approach
+
+We will evaluate the performance using different numbers of threads:
+- **2 threads**
+- **4 threads**
+- **8 threads**
+
+The results will then be compared individually to the performance of tasks executions in `Python`.
+
+Here are the results with :
+- **2 threads**
+```bash
+Results in C++
+Task (Job of size 4990) completed, Time: 6.46503 seconds
+Task (Job of size 6900) completed, Time: 20.55875 seconds
+Task (Job of size 4200) completed, Time: 3.80499 seconds
+Task (Job of size 100) completed, Time: 0.00018 seconds
+Task (Job of size 1000) completed, Time: 0.05961 seconds
+Task (Job of size 10) completed, Time: 0.00001 seconds
+Task (Job of size 2989) completed, Time: 1.38862 seconds
+Task (Job of size 3080) completed, Time: 1.51842 seconds
+Task (Job of size 3398) completed, Time: 2.01863 seconds
+Task (Job of size 1162) completed, Time: 0.08772 seconds
+Task (Job of size 761) completed, Time: 0.02830 seconds
+
+Results in Python
+Task (Job of size 4990) completed, Time: 0.96055 seconds
+Task (Job of size 6900) completed, Time: 1.94416 seconds
+Task (Job of size 4200) completed, Time: 0.52031 seconds
+Task (Job of size 100) completed, Time: 0.00761 seconds
+Task (Job of size 1000) completed, Time: 0.04158 seconds
+Task (Job of size 10) completed, Time: 0.00007 seconds
+Task (Job of size 2989) completed, Time: 0.22844 seconds
+Task (Job of size 3080) completed, Time: 0.23131 seconds
+Task (Job of size 3398) completed, Time: 0.30405 seconds
+Task (Job of size 1162) completed, Time: 0.02971 seconds
+Task (Job of size 761) completed, Time: 0.01507 seconds
+```
+
+![Error Plot with Problem Size and Highlighted Points](data/ex5.png)
+
+Overall, we observe significant speed improvements. However, `Python` executions remain overall faster and more accurate.
+
+- **4 threads**
+```bash
+Results in C++
+Task (Job of size 4990) completed, Time: 6.46503 seconds
+Task (Job of size 6900) completed, Time: 20.55875 seconds
+Task (Job of size 4200) completed, Time: 3.80499 seconds
+Task (Job of size 100) completed, Time: 0.00018 seconds
+Task (Job of size 1000) completed, Time: 0.05961 seconds
+Task (Job of size 10) completed, Time: 0.00001 seconds
+Task (Job of size 2989) completed, Time: 1.38862 seconds
+Task (Job of size 3080) completed, Time: 1.51842 seconds
+Task (Job of size 3398) completed, Time: 2.01863 seconds
+Task (Job of size 1162) completed, Time: 0.08772 seconds
+Task (Job of size 761) completed, Time: 0.02830 seconds
+
+Results in Python
+Task (Job of size 4990) completed, Time: 0.96055 seconds
+Task (Job of size 6900) completed, Time: 1.94416 seconds
+Task (Job of size 4200) completed, Time: 0.52031 seconds
+Task (Job of size 100) completed, Time: 0.00761 seconds
+Task (Job of size 1000) completed, Time: 0.04158 seconds
+Task (Job of size 10) completed, Time: 0.00007 seconds
+Task (Job of size 2989) completed, Time: 0.22844 seconds
+Task (Job of size 3080) completed, Time: 0.23131 seconds
+Task (Job of size 3398) completed, Time: 0.30405 seconds
+Task (Job of size 1162) completed, Time: 0.02971 seconds
+Task (Job of size 761) completed, Time: 0.01507 seconds
+```
+
+![Error Plot with Problem Size and Highlighted Points](data/ex6.png)
+
+Overall, we observe significant speed improvements. However, `Python` executions remain overall faster and more accurate.
+
+- **8 threads**
+```bash
+Results in C++
+Task (Job of size 4990) completed, Time: 6.46503 seconds
+Task (Job of size 6900) completed, Time: 20.55875 seconds
+Task (Job of size 4200) completed, Time: 3.80499 seconds
+Task (Job of size 100) completed, Time: 0.00018 seconds
+Task (Job of size 1000) completed, Time: 0.05961 seconds
+Task (Job of size 10) completed, Time: 0.00001 seconds
+Task (Job of size 2989) completed, Time: 1.38862 seconds
+Task (Job of size 3080) completed, Time: 1.51842 seconds
+Task (Job of size 3398) completed, Time: 2.01863 seconds
+Task (Job of size 1162) completed, Time: 0.08772 seconds
+Task (Job of size 761) completed, Time: 0.02830 seconds
+
+Results in Python
+Task (Job of size 4990) completed, Time: 0.96055 seconds
+Task (Job of size 6900) completed, Time: 1.94416 seconds
+Task (Job of size 4200) completed, Time: 0.52031 seconds
+Task (Job of size 100) completed, Time: 0.00761 seconds
+Task (Job of size 1000) completed, Time: 0.04158 seconds
+Task (Job of size 10) completed, Time: 0.00007 seconds
+Task (Job of size 2989) completed, Time: 0.22844 seconds
+Task (Job of size 3080) completed, Time: 0.23131 seconds
+Task (Job of size 3398) completed, Time: 0.30405 seconds
+Task (Job of size 1162) completed, Time: 0.02971 seconds
+Task (Job of size 761) completed, Time: 0.01507 seconds
+```
+
+![Error Plot with Problem Size and Highlighted Points](data/ex7.png)
+
+Overall, we observe significant speed improvements. However, `Python` executions remain overall faster and more accurate.
+
 ### Conclusion
 
-Overall, switching the build type of the `C++ Minion` to `Release` improves performance. However, it is important to note that the `numpy` library is significantly faster and more accurate than the `Eigen` library.
+Switching the build type of the `C++ Minion` to `Release` significantly improves performance. However, the `numpy` library remains considerably faster and more accurate compared to the `Eigen` library.
+
+In our tests, enabling parallelism with `OpenMP` improved performance but not as much as anticipated, resulting in an overall **3% reduction in computation time**.

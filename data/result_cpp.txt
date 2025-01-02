@@ -1,0 +1,12 @@
+Results in C++
+Task (Job of size 4990) completed, Time: 6.85799 seconds
+Task (Job of size 6900) completed, Time: 17.83814 seconds
+Task (Job of size 4200) completed, Time: 4.59583 seconds
+Task (Job of size 100) completed, Time: 0.00023 seconds
+Task (Job of size 1000) completed, Time: 0.07259 seconds
+Task (Job of size 10) completed, Time: 0.00001 seconds
+Task (Job of size 2989) completed, Time: 1.86150 seconds
+Task (Job of size 3080) completed, Time: 1.97161 seconds
+Task (Job of size 3398) completed, Time: 2.45281 seconds
+Task (Job of size 1162) completed, Time: 0.11778 seconds
+Task (Job of size 761) completed, Time: 0.03570 seconds

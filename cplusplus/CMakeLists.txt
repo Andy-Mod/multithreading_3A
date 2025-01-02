@@ -9,6 +9,8 @@ set(CMAKE_BUILD_TYPE Release)
 option(CPR_ENABLE_SSL "" OFF)
 
 include(FetchContent)
+
+# Declare dependencies
 FetchContent_Declare(
   json
   DOWNLOAD_EXTRACT_TIMESTAMP OFF
@@ -21,9 +23,22 @@ FetchContent_Declare(
   eigen
   DOWNLOAD_EXTRACT_TIMESTAMP OFF
   URL "https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.gz")
-FetchContent_MakeAvailable(json eigen cpr)
-find_package(OpenMP REQUIRED COMPONENTS CXX)
 
+FetchContent_MakeAvailable(json eigen cpr)
+
+# Find OpenMP
+find_package(OpenMP REQUIRED)
+
+# Add executable
 add_executable(${PROJECT_NAME} ${PROJECT_NAME}.cpp)
+
+# Link libraries and OpenMP
 target_link_libraries(${PROJECT_NAME} nlohmann_json::nlohmann_json cpr::cpr
                       Eigen3::Eigen OpenMP::OpenMP_CXX)
+
+add_definitions(-DEIGEN_DONT_PARALLELIZE)
+# Ensure OpenMP is enabled by adding the proper flags if OpenMP is found
+if(OPENMP_FOUND)
+  target_compile_options(${PROJECT_NAME} PRIVATE ${OpenMP_CXX_FLAGS})
+  target_link_options(${PROJECT_NAME} PRIVATE ${OpenMP_EXE_LINKER_FLAGS})
+endif()

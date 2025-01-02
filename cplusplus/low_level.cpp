@@ -3,6 +3,7 @@
 #include <cpr/cpr.h>
 #include <iostream>
 #include <nlohmann/json.hpp>
+#include <omp.h>
 #include <string>
 
 using json = nlohmann::json;
@@ -53,26 +54,19 @@ public:
   }
 
   void work() {
-
+    omp_set_num_threads(8);
+    Eigen::setNbThreads(8);
     auto start = high_resolution_clock::now();
     x = A.householderQr().solve(b);
+
     auto end = high_resolution_clock::now();
     time = duration<float>(end - start).count();
-
-    Eigen::VectorXf out = A * x;
-
-    if ((out - b).norm() <= 1e-4)
-      cout << "Calcul correct !" << endl;
   }
 
   Eigen::VectorXf get_x() const { return x; }
-
   Eigen::MatrixXf get_A() const { return A; }
-
   Eigen::VectorXf get_b() const { return b; }
-
   string get_identifier() const { return identifier; }
-
   float get_time() const { return time; }
   int get_size() const { return size; }
 
@@ -131,6 +125,15 @@ void do_task_then_post_result(Task task, string URL) {
   if (r.status_code != 200) {
     cerr << "HTTP POST failed with status: " << r.status_code << endl;
   } else {
+    Eigen::VectorXf out(task.get_A().rows());
+#pragma omp parallel for
+    for (int i = 0; i < task.get_A().rows(); ++i) {
+      out(i) = task.get_A().row(i).dot(task.get_x());
+    }
+
+    if ((out - task.get_b()).norm() <= 1e-4)
+      cout << "Calculation correct!" << endl;
+
     cout << "Task results (" << task.get_identifier()
          << ") successfully posted!" << endl;
     cout << "Task duration: " << task.get_time() << " seconds" << endl;
